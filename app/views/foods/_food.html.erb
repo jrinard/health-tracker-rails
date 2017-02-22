@@ -1,1 +1,20 @@
-<h1><%= food.name %></h1>
+<article class="box post post-excerpt food">
+  <header>
+    <h2><%= food.name %></h2>
+    <h3>Amount: <%= food.amount %></h3>
+    <h3>Calories: <%= food.calories %></h3>
+    <h3>Protein: <%= food.protein %></h3>
+    <h3>Fat: <%= food.fat %></h3>
+    <h3>Carbs: <%= food.carbs %></h3>
+    <% if food.notes? %>
+    <h3>Notes: <%= food.notes %></h3>
+    <% end %>
+  </header>
+  <div class="info">
+
+    <span class="date"><span class="month">Jul<span>y</span></span> <span class="day">14</span><span class="year">, 2014</span></span>
+
+    <ul class="stats">
+    </ul>
+  </div>
+</article>

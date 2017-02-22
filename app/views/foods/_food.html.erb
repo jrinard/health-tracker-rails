@@ -9,6 +9,9 @@
     <% if food.notes? %>
     <h3>Notes: <%= food.notes %></h3>
     <% end %>
+    <div class="pull-right">
+      <span id="edit_<%= food.id %>"><%= link_to "Edit", edit_food_path(food), id: "edit_food_link", class: "", remote: true %></span>
+    </div>
   </header>
   <div class="info">
 

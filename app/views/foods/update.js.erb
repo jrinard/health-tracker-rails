@@ -1,0 +1,12 @@
+
+$('#food_link_<%= @food.id %>').remove();
+
+// Hides form
+$('#edit_food_<%= @food.id %>').hide();
+
+$('#all_food').append("<%= j render 'foods/food', food: @food %>")
+
+$(".notice").text("Food Successfuly Edited!")
+setTimeout(function() {
+  $(".notice").text("")
+}, 5000);

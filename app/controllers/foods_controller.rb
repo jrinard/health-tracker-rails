@@ -21,6 +21,25 @@ class FoodsController < ApplicationController
     end
   end
 
+  def edit
+    @food = Food.find(params[:id])
+  end
+
+  def update
+    @food = Food.find(params[:id])
+    if @food.update(food_params)
+      respond_to do |format|
+        if @food.save
+          format.html {redirect_to foods_path, notice: 'Food Successfuly Edited!'}
+          format.js
+        else
+          format.html {render :edit, notice: 'There was an error.'}
+          format.js { redirect_back(fallback_location: foods_path, notice: 'There was an error.') }
+        end
+      end
+    end
+  end
+
 
 
 

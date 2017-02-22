@@ -1,11 +1,23 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Guest/Desktop/health-tracker/spec/models/user_spec.rb": [
+      "/Users/Guest/Desktop/health-tracker/spec/features/food_pages_spec.rb": [
         1,
+        null,
         null,
         1,
         1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
         null
       ],
       "/Users/Guest/Desktop/health-tracker/spec/rails_helper.rb": [
@@ -562,13 +574,32 @@
         0,
         null,
         null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        0,
         null,
         null
       ],
       "/Users/Guest/Desktop/health-tracker/app/controllers/home_controller.rb": [
         1,
         1,
-        null,
+        0,
         null,
         null,
         null
@@ -589,9 +620,27 @@
         null
       ],
       "/Users/Guest/Desktop/health-tracker/spec/factories.rb": [
-
+        1,
+        1,
+        2,
+        1,
+        null,
+        null
+      ],
+      "/Users/Guest/Desktop/health-tracker/spec/models/user_spec.rb": [
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1487790897
+    "timestamp": 1487803600
   }
 }

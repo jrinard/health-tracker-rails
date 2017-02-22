@@ -1,0 +1,22 @@
+
+<%= render "layouts/errors", :object => @food %>
+
+<%= form_for @food, authenticity_token: true, remote: true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :amount %>
+  <%= f.text_field :amount %>
+  <%= f.label :calories %>
+  <%= f.text_field :calories %>
+  <%= f.label :protein %>
+  <%= f.text_field :protein %>
+  <%= f.label :fat %>
+  <%= f.text_field :fat %>
+  <%= f.label :carbs %>
+  <%= f.text_field :carbs %>
+  <%= f.label :notes %>
+  <%= f.text_area :notes %>
+  <%= f.label :date %>
+  <%= f.text_field :date %>
+  <%= f.submit %>
+<% end %>

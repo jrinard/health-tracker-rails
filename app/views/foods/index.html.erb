@@ -1,3 +1,7 @@
+  <%= link_to "Add Food", new_food_path, id: "new_food_link", remote: true %>
+
+  <hr>
+
 <% @foods.each do |food| %>
   <h1><%= food.name %></h1>
 <% end %>

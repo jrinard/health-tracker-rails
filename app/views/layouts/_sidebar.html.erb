@@ -9,17 +9,29 @@
 	<!-- Nav -->
 		<nav id="nav">
 			<ul>
-				<li class="current"><a href="#">Home</a></li>
-				<!-- <li><a href="#">Archives</a></li>
-				<li><a href="#">About Me</a></li>
+				<li class="<%= 'current' if current_page?(root_path) %>">
+					<%= link_to "Home", root_path %>
+				</li>
+				<li class="<%= 'current' if current_page?(foods_path) %>">
+					<%= link_to "Nutrition", foods_path %>
+				</li>
+				<!-- <li><a href="#">About Me</a></li>
 				<li><a href="#">Contact Me</a></li> -->
 
         <% if user_signed_in? %>
-         <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
-         <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+         <li class="<%= 'current' if current_page?(edit_user_registration_path) %>">
+					 <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+				 </li>
+         <li class="<%= 'current' if current_page?(destroy_user_session_path) %>">
+					 <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'%>
+				 </li>
        <% else %>
-         <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
-         <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+         <li class="<%= 'current' if current_page?(new_user_registration_path) %>">
+					 <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'%>
+				 </li>
+         <li class="<%= 'current' if current_page?(new_user_session_path) %>">
+					 <%= link_to "Login", new_user_session_path, :class => 'navbar-link'%>
+				 </li>
        <% end %>
 
 			</ul>

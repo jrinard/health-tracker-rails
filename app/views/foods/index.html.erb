@@ -2,6 +2,8 @@
 
   <hr>
 
-<% @foods.each do |food| %>
-  <h1><%= food.name %></h1>
-<% end %>
+<div id="all_food">
+  <% @foods.each do |food| %>
+    <%= render 'foods/food', food: food %>
+  <% end %>
+</div>

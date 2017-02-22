@@ -1,3 +1,7 @@
 $('#new_food').remove();
 $('#new_food_link').show();
-$('#all_food').append('<h1>Insert home code</h1>')
+$('#all_food').append("<%= j render 'foods/food', food: @food %>")
+$(".notice").text("Food Successfuly Added!")
+setTimeout(function() {
+  $(".notice").text("")
+}, 5000);

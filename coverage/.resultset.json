@@ -43,43 +43,13 @@
         null,
         1,
         1,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
         null,
         null,
         1,
         1,
-        null,
-        null,
         1,
         null,
         null,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
         null,
         null,
         null,
@@ -664,8 +634,10 @@
         null
       ],
       "/Users/Guest/Desktop/health-tracker/spec/support/factory_girl.rb": [
-        1,
-        1,
+        null,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/Guest/Desktop/health-tracker/spec/models/user_spec.rb": [
@@ -682,6 +654,6 @@
         null
       ]
     },
-    "timestamp": 1487810162
+    "timestamp": 1487810810
   }
 }

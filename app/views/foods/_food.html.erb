@@ -1,6 +1,4 @@
-
-<div id="food_link_<%= food.id %>"><!-- used to hide food on updated js -->
-<article class="box post post-excerpt food">
+<article class="box post post-excerpt food" id="food-box-<%= food.id %>">
   <header>
       <h2><%= food.name %></h2>
       <h3>Amount: <%= food.amount %></h3>
@@ -12,13 +10,18 @@
       <h3>Notes: <%= food.notes %></h3>
       <% end %>
       <div class="pull-right">
-        <span id="edit_<%= food.id %>"><%= link_to "Edit", edit_food_path(food), id: "edit_food_link", class: "", remote: true %></span>
+        <span id="edit_<%= food.id %>">
+          <%= link_to "Edit", edit_food_path(food), remote: true %>
+        </span>
+        <span id="delete_<%= food.id %>">
+          <%= link_to "Delete", food_path(food), remote: true, data: {method: 'delete', :confirm => 'Are You Sure? '} %>
+        </span>
       </div>
+      <div id="food_edit_<%= food.id %>"></div>
   </header>
   <div class="info">
-    <span class="date"><span class="month">Jul<span>y</span></span> <span class="day">14</span><span class="year">, 2014</span></span>
+    <span class="date"><span class="month"><%= food.date.strftime("%b") %><span>y</span></span> <span class="day"><%= food.date.strftime("%d") %></span><span class="year">, 2014</span></span>
     <ul class="stats">
     </ul>
   </div>
 </article>
-  </div>

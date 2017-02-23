@@ -1,8 +1,8 @@
 class FoodsController < ApplicationController
   before_action :authenticate_user!
-  
+  before_action :set_food, only: [:show, :edit, :update, :destroy]
+
   def index
-    @foods = Food.where(user_id: current_user.id)
   end
 
   def new
@@ -23,11 +23,10 @@ class FoodsController < ApplicationController
   end
 
   def edit
-    @food = Food.find(params[:id])
   end
 
   def update
-    @food = Food.find(params[:id])
+
     if @food.update(food_params)
       respond_to do |format|
         if @food.save
@@ -41,11 +40,19 @@ class FoodsController < ApplicationController
     end
   end
 
+  def destroy
+
+  end
 
 
 
-  private
-    def food_params
-      params.require(:food).permit(:name, :amount, :calories, :protein, :fat, :carbs, :notes, :date, :user_id)
-    end
+
+private
+  def set_food
+    @food = Food.where(user_id: current_user.id)
+  end
+
+  def food_params
+    params.require(:food).permit(:name, :amount, :calories, :protein, :fat, :carbs, :notes, :date, :user_id)
+  end
 end

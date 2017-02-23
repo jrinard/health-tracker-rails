@@ -1,9 +1,9 @@
 
 $("#modal-shadow").hide();
 $("#modal-window").html('');
-$('.food-form').hide();
 
-$('#all_food').append("<%= j render 'foods/food', food: @food %>")
+$('#food-row-<%= @food.id %>').after("<%= j render 'food_row', food: @food %>");
+$('#food-row-<%= @food.id %>').remove();
 
 $(".notice").text("Food Successfuly Edited!")
 setTimeout(function() {

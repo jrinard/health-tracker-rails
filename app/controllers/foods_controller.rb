@@ -12,6 +12,7 @@ class FoodsController < ApplicationController
   end
 
   def create
+    @days = Food.food_history(current_user)
     @food = Food.new(food_params)
     respond_to do |format|
       if @food.save

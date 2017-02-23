@@ -1,6 +1,18 @@
-$('#new_food').remove();
-$('#new_food_link').show();
-$('#all_food').append("<%= j render 'foods/food', food: @food %>")
+$("#modal-shadow").hide();
+$("#modal-window").html('');
+console.log($('food-for-<%= @food.date.strftime("%b-%d-%Y") %>'))
+
+// Searches to see if a table for that day exists
+if($('#food-for-<%= @food.date.strftime("%b-%d-%Y") %>').length > 0) {
+  // If so, add the new food row to the beginning
+  $('#food-for-<%= @food.date.strftime("%b-%d-%Y") %>').prepend("<%= j render 'food_row', food: @food %>");
+} else {
+  // Otherwise, make a new food entry for that day
+  $("#all_food").prepend("<%= j render 'day', day: [@food]  %>")
+}
+
+
+
 $(".notice").text("Food Successfuly Added!")
 setTimeout(function() {
   $(".notice").text("")

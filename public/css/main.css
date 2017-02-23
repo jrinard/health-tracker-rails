@@ -37,3 +37,12 @@ tr.edit, th.edit {
 .hidden {
   display: none;
 }
+
+.btn {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #222;
+}
+a:hover {
+  color: #0364ac;
+}

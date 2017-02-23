@@ -12,22 +12,9 @@
           <th class="edit"></th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="food-for-<%= day.first.date.strftime("%b-%d-%Y") %>">
         <% day.each do |food| %>
-          <tr>
-            <td><%= food.name %></td>
-            <td><%= food.amount %></td>
-            <td><%= food.calories %></td>
-            <td><%= food.protein %></td>
-            <td><%= food.fat %></td>
-            <td><%= food.carbs %></td>
-            <td class="edit"><span id="edit_<%= food.id %>">
-              <%= link_to "Edit", edit_food_path(food), {remote: true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %>
-            </span> |
-            <span id="delete_<%= food.id %>">
-              <%= link_to "Delete", food_path(food), remote: true, data: {method: 'delete', :confirm => 'Are You Sure? '} %>
-            </span></td>
-          </tr>
+          <%= render 'food_row', food: food %>
         <% end %>
           <tr class="table-active">
             <td>TOTAL</td>

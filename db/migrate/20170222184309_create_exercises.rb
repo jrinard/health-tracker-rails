@@ -3,10 +3,10 @@ class CreateExercises < ActiveRecord::Migration[5.0]
     create_table :exercises do |t|
       t.string :name
       t.time :duration
-      t.integer :calories
+      t.integer :calories, :default => 0
       t.text :notes
       t.integer :user_id
-      t.date :date
+      t.date :date, :default => Date.now
       t.timestamps
     end
   end

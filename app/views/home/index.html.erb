@@ -1,4 +1,7 @@
+
+<% if @days %>
 <% @days.each do |day| %>
   <%= render 'home/day', day: day %>
   <hr>
+<% end %>
 <% end %>

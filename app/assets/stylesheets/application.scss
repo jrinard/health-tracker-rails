@@ -1,1 +1,10 @@
-@import "bootstrap"
+@import "bootstrap";
+
+
+.close {
+  cursor: pointer;
+}
+
+.modal-header {
+  margin-bottom: 20px;
+}

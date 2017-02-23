@@ -1,4 +1,7 @@
-$('#food-box-<%= @food_id %>').remove();
+$("#modal-shadow").hide();
+$("#modal-window").html('');
+
+$('#food-row-<%= @food_id %>').remove();
 
 $(".notice").text("Your Food has been successfuly deleted.")
 setTimeout(function() {

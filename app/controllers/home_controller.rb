@@ -1,6 +1,8 @@
 class HomeController < ApplicationController
   def index
-    @foods = Food.all
+    if current_user
+      @days = Food.food_history(current_user)
+    end
   end
 
 end

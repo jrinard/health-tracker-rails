@@ -3,6 +3,7 @@ class FoodsController < ApplicationController
   before_action :set_food, only: [:show, :edit, :update, :destroy]
 
   def index
+    @foods = Food.where(user_id: current_user.id)
   end
 
   def new
@@ -26,7 +27,6 @@ class FoodsController < ApplicationController
   end
 
   def update
-
     if @food.update(food_params)
       respond_to do |format|
         if @food.save
@@ -41,7 +41,12 @@ class FoodsController < ApplicationController
   end
 
   def destroy
-
+    @food_id = @food.id
+    @food.destroy
+    respond_to do |format|
+      format.html { redirect_to foods_path, notice: 'Your Food has been successfuly deleted.'}
+      format.js
+    end
   end
 
 
@@ -49,7 +54,7 @@ class FoodsController < ApplicationController
 
 private
   def set_food
-    @food = Food.where(user_id: current_user.id)
+    @food = Food.find(params[:id])
   end
 
   def food_params

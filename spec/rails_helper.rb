@@ -7,7 +7,6 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rails'
 require 'database_cleaner'
-require 'support/factory_girl'
 
 ActiveRecord::Migration.maintain_test_schema!
 
@@ -27,7 +26,7 @@ RSpec.configure do |config|
       example.run
     end
   end
-  
+
 end
 
 Shoulda::Matchers.configure do |config|

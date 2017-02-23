@@ -11,6 +11,7 @@ user1 = User.create(:email => "j@example.com", :password => "password")
 food1 = Food.create(
   :name => "Pizza",
   :amount => "1 slice",
+  :date => Time.new(2015, 10, 31),
   :calories => 285,
   :protein => 12,
   :fat => 10,
@@ -19,11 +20,22 @@ food1 = Food.create(
 food2 = Food.create(
   :name => "Hamburger",
   :amount => "1",
+  :date => Time.new(2016, 1, 1),
   :calories => 354,
   :protein => 20,
   :fat => 17,
   :carbs => 29)
 
+food3 = Food.create(
+  :name => "Hamburger",
+  :amount => "2",
+  :date => Time.new(2016, 1, 1),
+  :calories => 708,
+  :protein => 40,
+  :fat => 34,
+  :carbs => 58)
+
 # This way user_id is set dynamically
 user1.foods.push(food1)
 user1.foods.push(food2)
+user1.foods.push(food3)

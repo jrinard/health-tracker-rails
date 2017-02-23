@@ -1,0 +1,16 @@
+input[type=submit] {
+  margin-top: 20px;
+}
+html, body {
+  height: 100%;
+}
+#content {
+  min-height: calc(100% - 44px);
+}
+.food {
+  min-height: 300px;
+}
+
+.box.post header {
+  padding: 1em 0 2em;
+}

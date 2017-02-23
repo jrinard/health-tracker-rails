@@ -1,0 +1,6 @@
+$('#food-box-<%= @food_id %>').remove();
+
+$(".notice").text("Your Food has been successfuly deleted.")
+setTimeout(function() {
+  $(".notice").text("")
+}, 5000);

@@ -1,7 +1,7 @@
 
 $('#food_link_<%= @food.id %>').remove();
 
-// Hides form
+// Hides form when update submited
 $('#edit_food_<%= @food.id %>').hide();
 
 $('#all_food').append("<%= j render 'foods/food', food: @food %>")

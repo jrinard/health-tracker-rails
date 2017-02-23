@@ -1,9 +1,7 @@
 require 'simplecov'
+require 'capybara/poltergeist'
 
 SimpleCov.start
-
-
-require 'capybara/poltergeist'
 Capybara.javascript_driver = :poltergeist
 
 RSpec.configure do |config|

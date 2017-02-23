@@ -1,15 +1,14 @@
 require 'rails_helper'
 
 
-describe "Add food" do
-  before() do
+describe "Login", type: :feature do
+  before(:each) do
     user = FactoryGirl.create(:user)
-    visit 'users/sign_up'
-    login_as(user)
+    login_as(user, :scope => :user)
   end
 
   it "Create and View food", :js => true do
-    visit root_path
+    visit foods_path
     click_link("Add Food")
     fill_in 'Name', :with => 'Milk'
     click_on 'Create Food'

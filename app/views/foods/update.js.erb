@@ -1,5 +1,6 @@
 
-$('#food-box-<%= @food.id %>').remove();
+$("#modal-shadow").hide();
+$("#modal-window").html('');
 $('.food-form').hide();
 
 $('#all_food').append("<%= j render 'foods/food', food: @food %>")

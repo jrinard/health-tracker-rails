@@ -1,4 +1,5 @@
-// hides edit link
-  $('#edit_<%= @food.id %>').hide()
-  $('.food-form').hide();
-  $("#food_edit_<%= @food.id %>").append('<%= j render("form") %>')
+$("#modal-shadow").show();
+console.log("TEST")
+$('.food-form').hide();
+$("#modal-window").html('<%= j render "modal" %>');
+z

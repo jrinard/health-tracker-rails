@@ -22,7 +22,7 @@
             <td><%= food.fat %></td>
             <td><%= food.carbs %></td>
             <td class="edit"><span id="edit_<%= food.id %>">
-              <%= link_to "Edit", edit_food_path(food), remote: true %>
+              <%= link_to "Edit", edit_food_path(food), {remote: true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %>
             </span> |
             <span id="delete_<%= food.id %>">
               <%= link_to "Delete", food_path(food), remote: true, data: {method: 'delete', :confirm => 'Are You Sure? '} %>

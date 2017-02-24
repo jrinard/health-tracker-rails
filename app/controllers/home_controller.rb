@@ -1,8 +1,8 @@
 class HomeController < ApplicationController
+  before_action :authenticate_user!
+
   def index
-    if current_user
-      @days = Food.food_history(current_user)
-    end
+    @day = Food.where(user_id: current_user.id).where(date: Time.now)
   end
 
 end

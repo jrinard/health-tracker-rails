@@ -3,7 +3,7 @@ $("#modal-window").html('');
 console.log('#day-<%= @food_date.strftime("%b-%d-%Y") %>')
 $('#day-<%= @food_date.strftime("%b-%d-%Y") %>').remove();
 if(<%= Food.where(date: @food_date).length %> > 0) {
-  $("#all_food").prepend("<%= j render 'day', day: Food.where(date: @food_date) %>");
+  $("#all_food").prepend("<%= j render 'day', day: Food.where(user_id: current_user.id).where(date: @food_date) %>");
 }
 
 

@@ -44,6 +44,7 @@ class FoodsController < ApplicationController
 
   def destroy
     @food_id = @food.id
+    @food_date = @food.date;
     @food.destroy
     respond_to do |format|
       format.html { redirect_to foods_path, notice: 'Your Food has been successfuly deleted.'}

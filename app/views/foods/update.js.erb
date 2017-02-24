@@ -1,9 +1,8 @@
-
 $("#modal-shadow").hide();
 $("#modal-window").html('');
 
-$('#food-row-<%= @food.id %>').after("<%= j render 'food_row', food: @food %>");
-$('#food-row-<%= @food.id %>').remove();
+$('#day-<%= @food.date.strftime("%b-%d-%Y") %>').remove();
+$("#all_food").prepend("<%= j render 'day', day: Food.where(date: @food.date) %>");
 
 $(".notice").text("Food Successfuly Edited!")
 setTimeout(function() {
